@@ -1,0 +1,13 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+
+services:
+    user_repository:
+      class: Doctrine\ORM\EntityRepository
+      factory_service: doctrine.orm.default_entity_manager
+      factory_method: getRepository
+      arguments: ["WidgetBundle\Entity\User"]
+    sampleWidget:
+        class: WidgetBundle\Service\WidgetService
+        arguments: ["@user_repository", "@validator.builder"]
+

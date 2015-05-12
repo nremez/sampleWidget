@@ -1,0 +1,6 @@
+widget_homepage:
+    path:     /
+    defaults: { _controller: WidgetBundle:Default:index }
+create:
+    path: /create
+    defaults: {_controller: WidgetBundle:Default:create}
